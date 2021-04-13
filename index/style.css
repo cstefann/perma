@@ -1,0 +1,194 @@
+body {
+	background-image: url(./images/bg.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+  /* Folosesc cele 3 proprietati pentru ca footer-ul sa nu se mai suprapuna 
+  cu content-ul din pagina la scroll down maxim */
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
+}
+
+
+/*responsive*/
+
+
+/* Titlul aplicatiei web */
+
+.page-title {
+	color: white;
+	font-size: 60px;
+	text-align: center;
+	font-family: 'Times New Roman', serif;
+}
+
+.page-content {
+	color: whitesmoke;
+	font-size: 20px;
+	text-align: center;
+	font-family: 'Times New Roman', serif;
+}
+
+.bg-for-items {
+	background-color: rgba(54, 54, 54, 0.344);
+	width: 70%;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 1px;
+	background-color: #333;
+	color: white;
+	text-align: center;
+	opacity: 0.6;
+}
+
+
+/*navbar*/
+
+
+/*source: www.w3cshools.com*/
+
+.navbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	opacity: 0.6;
+}
+
+
+/* Utilizat pentru meniuri (sa nu se afle unul sub celalalt) */
+
+.navbar li {
+	float: left;
+}
+
+
+/* Pentru fiecare optiune din meniu (bloc cu text alb in mijloc) */
+
+.navbar li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+/* Hover peste optiunile din navbar */
+
+.navbar li a:hover:not(.active) {
+	background-color: rgba(255, 255, 255, 0.344);
+}
+
+
+/* nth-child(5, 6) sunt folosite pentru a plasa butoanele de login si sign up la dreapta */
+
+.navbar li:nth-child(5) {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+}
+
+.navbar li:nth-child(6) {
+	position: absolute;
+	right: 82px;
+	top: 8px;
+}
+
+
+/* Marcheaza pagina pe care se afla user-ul */
+
+.active {
+	background-color: #ed9933;
+}
+
+
+/* Partea de photo grid */
+
+div.item {
+	vertical-align: top;
+	display: inline-block;
+	text-align: center;
+	width: 230px;
+	padding: 0 40px;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+	padding: 14px;
+}
+
+.caption {
+	display: block;
+	color: white;
+	font-family: 'Times New Roman', serif;
+}
+
+
+/* Folosit pentru diverse fraze */
+
+.rand-text {
+	text-align: center;
+	color: white;
+	font-family: 'Times New Roman', serif;
+}
+
+
+/* Partea de form - login & signup */
+
+input[type=text],
+select {
+	width: 25%;
+	padding: 14px;
+	margin: 8px 0;
+	border: 1px solid white;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 25%;
+	background-color: #ed9933;
+	color: white;
+	padding: 14px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #f58700d7;
+}
+
+input[type="password"] {
+	-webkit-text-security: disc;
+	width: 25%;
+	padding: 14px;
+	margin: 8px 0;
+	border: 1px solid white;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.form {
+	border-radius: 5px;
+	padding: 20px;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
