@@ -1,17 +1,3 @@
-const { rejects } = require('assert')
-const fs = require('fs')
-const { resolve } = require('path')
-
-function writetofile(fname, content)
-{
-    fs.writeFileSync(fname, JSON.stringify(content), 'utf8', (err) => {
-        if (err)
-        {
-            console.log(err)
-        }
-    })
-}
-
 function getPostData(req)
 {
     return new Promise((resolve, rejects) => {
@@ -34,6 +20,5 @@ function getPostData(req)
 }
 
 module.exports = {
-    writetofile,
     getPostData
 }

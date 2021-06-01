@@ -1,5 +1,9 @@
 const http = require('http')
 const { getProducts, getProduct, createProduct } = require('./controllers/product_controller')
+const { connectFunc } = require('./database')
+
+// db connection - mongo
+connectFunc()
 
 const server = http.createServer((req, res) => {
     // route for all products (temporary using a json file)
