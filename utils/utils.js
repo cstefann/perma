@@ -1,3 +1,5 @@
+var path = require('path');
+
 function getPostData(req)
 {
     return new Promise((resolve, rejects) => {

@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 // @desc Gets all Products
 // @route GET /products
-async function getProducts(req, res)
+async function getProducts(res)
 {
     Product.find({})
         .select({ _id: 0, __v: 0})
@@ -22,7 +22,7 @@ async function getProducts(req, res)
 
 // @desc Gets single Product
 // @route GET /products/:id
-async function getProduct(req, res, id)
+async function getProduct(res, id)
 {
     Product.find({id: id})
         .select({ _id: 0, __v: 0})
