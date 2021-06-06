@@ -8,25 +8,32 @@
    </head>
    <body>
       <ul class="navbar">
-         <li><a href="index.html">Home</a></li>
+         <li><a href="/">Home</a></li>
          <li><a href="Explore.html">Explore</a></li>
          <li><a href="daily.html">Daily Choice</a></li>
          <li><a href="forme.html">Suggestion</a></li>
-         <li><a href="login.html">Log in</a></li>
-         <li><a class="active" href="signup.html">Sign Up</a></li>
+         <li><a href="/user/login">Log in</a></li>
+         <li><a class="active" href="/user/signup">Sign Up</a></li>
       </ul>
       <h1 class="page-title">Join our community</h1>
       <div class="form">
-         <form action="explore.html">
+         <form id="reg-form" action="explore.html">
             <label class="rand-text">First & Last Name</label>
-            <div class="form"><input type="text" placeholder="Your complete name"></div>
+            <div class="form"><input type="text" id="fullname" placeholder="Your complete name" autocomplete="off"></div>
             <label class="rand-text" >Username</label>
-            <div class="form"><input type="text" placeholder="Your username"></div>
+            <div class="form"><input type="text" id="username" placeholder="Your username" autocomplete="off"></div>
             <label class="rand-text" >Password</label>
-            <div class="form"><input type="password" placeholder="Your password"></div>
+            <div class="form"><input type="password" id="password" placeholder="Your password"></div>
+            <label class="rand-text">Gender</label>
+            <div class="form">
+               <select name="gender" id="gender">
+                  <option>Male</option>
+                  <option>Femele</option>
+               </select>
+            </div>
             <label class="rand-text">Country</label>
             <div class="form">
-               <select name="country">
+               <select name="country" id="country">
                   <option>Romania</option>
                   <option>Germany</option>
                   <option>France</option>
@@ -34,9 +41,41 @@
                   <option>Canada</option>
                </select>
             </div>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Sign up">
          </form>
       </div>
+      <script>
+         const form = document.getElementById('reg-form')
+         form.addEventListener('submit', register_user)
+
+         async function register_user(event)
+         {
+            event.preventDefault()
+
+            // taking data from form (body)
+            const fullname = document.getElementById('fullname').value
+            const username = document.getElementById('username').value
+            const password = document.getElementById('password').value
+            const gender   = document.getElementById('gender').value
+            const country  = document.getElementById('country').value
+
+            const result = await fetch('/user/signup', {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json'
+               },
+               body: JSON.stringify({
+                  fullname,
+                  username,
+                  password,
+                  gender,
+                  country
+               })
+            }).then((res) => res.json)
+
+            console.log(result)
+         }
+      </script>
       <div class="footer">
          <p class="rand-text">PerMa Store</p>
       </div>

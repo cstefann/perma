@@ -8,21 +8,47 @@
    </head>
    <body>
       <ul class="navbar">
-         <li><a href="index.html">Home</a></li>
+         <li><a href="/">Home</a></li>
          <li><a href="Explore.html">Explore</a></li>
          <li><a href="daily.html">Daily Choice</a></li>
          <li><a href="forme.html">Suggestion</a></li>
-         <li><a class="active" href="login.html">Log in</a></li>
-         <li><a href="signup.html">Sign Up</a></li>
+         <li><a class="active" href="/user/login">Log in</a></li>
+         <li><a href="/user/signup">Sign Up</a></li>
       </ul>
       <h1 class="page-title">Log In</h1>
       <div class="form">
-         <form action="explore.html">
-            <div class="form"><input type="text" placeholder="Username"></div>
-            <div class="form"><input type="password" placeholder="Password"></div>
+         <form id="login-form" action="explore.html">
+            <div class="form"><input type="text" id="username" placeholder="Your username" autocomplete="off"></div>
+            <div class="form"><input type="password" id="password" placeholder="Your password"></div>
             <input type="submit" value="Log In">
          </form>
       </div>
+      <script>
+         const form = document.getElementById('login-form')
+         form.addEventListener('submit', login_user)
+
+         async function login_user(event)
+         {
+            event.preventDefault()
+
+            // taking data from form (body)
+            const username = document.getElementById('username').value
+            const password = document.getElementById('password').value
+
+            const result = await fetch('/user/login', {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json'
+               },
+               body: JSON.stringify({
+                  username,
+                  password
+               })
+            }).then((res) => res.json)
+
+            console.log(result)
+         }
+      </script>
       <div class="footer">
          <p class="rand-text">PerMa Store</p>
       </div>

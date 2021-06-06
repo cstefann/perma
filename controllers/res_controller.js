@@ -93,7 +93,7 @@ async function getJS(req, res)
 async function getPhoto(req, res)
 {
   try {
-    fs.readFile('public' + req.url, (err, data) => {
+    fs.readFile('public/images/' + req.url, (err, data) => {
       const image = data
       if (err) {
         res.statusCode = 404

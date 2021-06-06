@@ -1,11 +1,14 @@
-const {res_router} = require('../routes/res_router')
+const { res_router } = require('./res_router')
+
+// homepage is static, that's why I have only a GET method treated
 
 function home_route(req, res) 
 {
-    console.log("[home-router-log] Home pages with %s req", req.method)
-    console.log("[home-router-log] Home pages with %s url", req.url)
-
-    res_router(req, res)
+    if (req.method === 'GET')
+    {
+        req.url = "/index.html"
+        res_router(req, res)
+    }
 }
 
 module.exports = {

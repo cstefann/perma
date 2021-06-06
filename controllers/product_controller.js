@@ -1,6 +1,5 @@
 const Product = require('../models/product_model')
-const { getPostData } = require('../utils')
-const mongoose = require('mongoose')
+const { getPostData } = require('../utils/utils')
 
 // @desc Gets all Products
 // @route GET /products
@@ -49,7 +48,6 @@ async function createProduct(req, res)
         const {id, name, gender, price} = JSON.parse(body)
 
         const product = new Product({
-            _id: new mongoose.Types.ObjectId(),
             id,
             name,
             gender,
