@@ -5,28 +5,21 @@ async function getCSS(req, res)
   try {
     fs.readFile('public/' + req.url, 'utf8', function (err, data) {
       if (err) {
-        res.statusCode = 404
-        res.write(`not found at ${req.url}`)
-        res.end()
+        res.writeHead(404, { 'Content-Type': 'text/html' })
+        res.end('not found at %s', req.url)
       } else {
         try {
-          res.statusCode = 200
-          res.setHeader('Content-Type', 'text/css')
-          res.write(data)
-          res.end()
+          res.writeHead(200, { 'Content-Type': 'text/css' })
+          res.end(data)
         } catch (e) {
-          res.statusCode = 500
-          res.setHeader('Content-Type', 'text/css')
-          res.write('Internal server error')
-          res.end()
+          res.writeHead(500, { 'Content-Type': 'text/html' })
+          res.end('Internal server error')
         }
       }
     })
   } catch (e) {
-    res.statusCode = 500
-    res.setHeader('Content-Type', 'text/css')
-    res.write('Internal server error')
-    res.end()
+    res.writeHead(500, { 'Content-Type': 'text/html' })
+    res.end('Internal server error')
   }
 }
 
@@ -35,28 +28,21 @@ async function getHtml(req, res)
   try {
     await fs.readFile('public/' + req.url, 'utf8', function (err, data) {
       if (err) {
-        res.statusCode = 404
-        res.write(`not found at ${req.url}`)
-        res.end()
+        res.writeHead(404, { 'Content-Type': 'text/html' })
+        res.end('not found at %s', req.url)
       } else {
         try {
-          res.statusCode = 200
-          res.setHeader('Content-Type', 'text/html')
-          res.write(data)
-          res.end()
+          res.writeHead(200, { 'Content-Type': 'text/html' })
+          res.end(data)
         } catch (e) {
-          res.statusCode = 500
-          res.setHeader('Content-Type', 'text/html')
-          res.write('Internal server error')
-          res.end()
+          res.writeHead(500, { 'Content-Type': 'text/html' })
+          res.end('Internal server error')
         }
       }
     })
   } catch (e) {
-    res.statusCode = 500
-    res.setHeader('Content-Type', 'text/html')
-    res.write('Internal server error')
-    res.end()
+    res.writeHead(500, { 'Content-Type': 'text/html' })
+    res.end('Internal server error')
   }
 }
 
@@ -65,28 +51,21 @@ async function getJS(req, res)
   try {
     await fs.readFile('public/' + req.url, 'utf8', function (err, data) {
       if (err) {
-        res.statusCode = 404
-        res.write(`not found at ${req.url}`)
-        res.end()
+        res.writeHead(404, { 'Content-Type': 'text/html' })
+        res.end('not found at %s', req.url)
       } else {
         try {
-          res.statusCode = 200
-          res.setHeader('Content-Type', 'text/javascript')
-          res.write(data)
-          res.end()
+          res.writeHead(200, { 'Content-Type': 'text/javascript' })
+          res.end(data)
         } catch (e) {
-          res.statusCode = 500
-          res.setHeader('Content-Type', 'text/javascript')
-          res.write('Internal server error')
-          res.end()
+          res.writeHead(500, { 'Content-Type': 'text/html' })
+          res.end('Internal server error')
         }
       }
     })
   } catch (e) {
-    res.statusCode = 500
-    res.setHeader('Content-Type', 'text/javascript')
-    res.write('Internal server error')
-    res.end()
+    res.writeHead(500, { 'Content-Type': 'text/html' })
+    res.end('Internal server error')
   }
 }
 
@@ -96,24 +75,21 @@ async function getPhoto(req, res)
     fs.readFile('public/images/' + req.url, (err, data) => {
       const image = data
       if (err) {
-        res.statusCode = 404
-        res.write(`not found at ${req.url}`)
-        res.end()
+        res.writeHead(404, { 'Content-Type': 'text/html' })
+        res.end('not found at %s', req.url)
       } else {
         try {
           res.writeHead(200, { 'Content-Type': 'image/jpg' })
           res.end(image, 'utf-8')
         } catch (e) {
-          res.writeHead(500)
-          res.write()
-          res.end()
+          res.writeHead(500, { 'Content-Type': 'text/html' })
+          res.end('Internal server error')
         }
       }
     })
   } catch (e) {
-    res.writeHead(500)
-    res.write()
-    res.end()
+    res.writeHead(500, { 'Content-Type': 'text/html' })
+    res.end('Internal server error')
   }
 }
 

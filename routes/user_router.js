@@ -29,6 +29,14 @@ async function user_router(req, res)
             loginUser(req, res)
         }
     }
+    else if(req.url.match(/\/forme/))
+    {
+        if (req.method === "GET")
+        {
+            req.url = "/forme.html"
+            res_router(req, res)
+        }
+    }
 }
 
 module.exports = {

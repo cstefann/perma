@@ -72,12 +72,14 @@ async function loginUser(req, res)
             .then(usr => {
                 if (usr.length)
                 {
-                    console.log(usr)
-                    res.writeHead(200, { 'Content-Type': 'application/json' })
-                    res.end(JSON.stringify(usr))
+                    res.writeHead(201, { 'Content-Type' : 'application/json'})
+                    res.end(JSON.stringify({
+                        route: '/'
+                    }))
                 }
                 else
                 {
+                    console.log('no user')
                     console.log("[user-controller] There is no user (%s)", username)
                 }
             })
