@@ -36,9 +36,14 @@ async function createUser(req, res)
                     user
                         .save()
                         .then(result => {
-                                console.log("[user-controller] Succes on creating new user")
-                                res.writeHead(201, { 'Content-Type' : 'application/json'}) // 201 - Obj created req
-                                return res.end(JSON.stringify(result))
+                            if (result)
+                            {
+                                console.log("result: ", result)
+                                res.writeHead(201, { 'Content-Type' : 'application/json'})
+                                res.end(JSON.stringify({
+                                    route: '/user/login'
+                                }))
+                            }
                             })
                         .catch(err => console.log(err))
                 }
@@ -79,7 +84,6 @@ async function loginUser(req, res)
                 }
                 else
                 {
-                    console.log('no user')
                     console.log("[user-controller] There is no user (%s)", username)
                 }
             })

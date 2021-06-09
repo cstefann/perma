@@ -2,7 +2,7 @@ var path = require('path');
 
 function getPostData(req)
 {
-    return new Promise((resolve, rejects) => {
+    return new Promise((resolve, reject) => {
         try
         {
             let body = ''
@@ -21,6 +21,6 @@ function getPostData(req)
     })
 }
 
-module.exports = {
+ module.exports = {
     getPostData
 }

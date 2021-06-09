@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
+      <script type="text/javascript" src="../scripts/signup.js" defer></script>
       <title>PerMa</title>
    </head>
    <body>
@@ -44,38 +45,6 @@
             <input type="submit" value="Sign up">
          </form>
       </div>
-      <script>
-         const form = document.getElementById('reg-form')
-         form.addEventListener('submit', register_user)
-
-         async function register_user(event)
-         {
-            event.preventDefault()
-
-            // taking data from form (body)
-            const fullname = document.getElementById('fullname').value
-            const username = document.getElementById('username').value
-            const password = document.getElementById('password').value
-            const gender   = document.getElementById('gender').value
-            const country  = document.getElementById('country').value
-
-            const result = await fetch('/user/signup', {
-               method: 'POST',
-               headers: {
-                  'Content-Type': 'application/json'
-               },
-               body: JSON.stringify({
-                  fullname,
-                  username,
-                  password,
-                  gender,
-                  country
-               })
-            }).then((res) => res.json)
-
-            console.log(result)
-         }
-      </script>
       <div class="footer">
          <p class="rand-text">PerMa Store</p>
       </div>

@@ -1,6 +1,6 @@
 const form = document.getElementById('login-form')
-form.addEventListener('submit', login_user)
 
+form.addEventListener('submit', login_user)
 
 function Utf8ArrayToStr(array) {
    var out, i, len, c;

@@ -49,7 +49,7 @@ async function getHtml(req, res)
 async function getJS(req, res)
 {
   try {
-    await fs.readFile('public/' + req.url, 'utf8', function (err, data) {
+    await fs.readFile('scripts/' + req.url, 'utf8', function (err, data) {
       if (err) {
         res.writeHead(404, { 'Content-Type': 'text/html' })
         res.end('not found at %s', req.url)

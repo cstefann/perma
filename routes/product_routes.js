@@ -10,8 +10,10 @@ function product_routes(req, res)
             console.log("[router-log] %s request on getting products", req.method)
             req.url = "/explore.html"
             res_router(req, res)
-            getProducts(res)
         }
+        else if (req.method === 'PUT') {
+            getProducts(res)
+        } 
         else if (req.method === 'POST')
         {
             console.log("[router-log] %s request on creating one product", req.method)

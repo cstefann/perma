@@ -10,6 +10,11 @@ async function router(req, res)
         console.log("[router] hitted /home case")
         home_route(req, res)
     }
+    else if (req.url === '/daily' && req.method === 'GET')
+    {
+        req.url = "/daily.html"
+        res_router(req, res)
+    }
     else if (req.url.match(/\/products/) && req.url[1] === 'p')
     {
         console.log("[router] hitted products case")
