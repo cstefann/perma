@@ -1,7 +1,7 @@
-let mongoose = require('mongoose');
+let mongoose = require('mongoose')
 
-const server = '127.0.0.1:27017';
-const database = 'perma';
+const server = '127.0.0.1:27017'
+const database = 'perma'
   
 function connectFunc() {
      mongoose.connect(`mongodb://${server}/${database}`,

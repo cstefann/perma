@@ -32,10 +32,16 @@ body {
 	font-family: 'Times New Roman', serif;
 }
 
+.page-content-articles {
+	color: whitesmoke;
+	font-size: 20px;
+	font-family: 'Times New Roman', serif;
+}
+
 .bg-for-items {
 	background-color: rgba(54, 54, 54, 0.344);
 	width: 70%;
-	display: inline-block;
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -95,13 +101,13 @@ body {
 
 /* nth-child(5, 6) sunt folosite pentru a plasa butoanele de login si sign up la dreapta */
 
-.navbar li:nth-child(5) {
+.navbar li:nth-child(6) {
 	position: absolute;
 	right: 8px;
 	top: 8px;
 }
 
-.navbar li:nth-child(6) {
+.navbar li:nth-child(7) {
 	position: absolute;
 	right: 82px;
 	top: 8px;

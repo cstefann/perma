@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ro">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <title>PerMa</title>
+   </head>
+   <body>
+      <ul class="navbar">
+         <li><a href="/">Home</a></li>
+         <li><a href="/products">Explore</a></li>
+         <li><a href="/daily">Daily Choice</a></li>
+         <li><a href="/user/forme">Suggestion</a></li>
+         <li><a  class="active" href="/about">About</a></li>
+         <li><a href="/user/login">Log in</a></li>
+         <li><a href="/user/signup">Sign Up</a></li>
+      </ul>
+      <div class="homepage">
+         <h1 class = "page-title"> About PerMA </h1>
+      </div>
+      <h2 class="page-content">Cuprins</h2>
+      <div class="bg-for-items">
+         <ol>
+            <li class="page-content-articles"><a class="page-content-articles" href="#abstract">Abstract</a></li>
+            <li class="page-content-articles"><a class="page-content-articles" href="#introducere">Introducere</a></li>
+            <li class="page-content-articles"><a class="page-content-articles" href="#pagini">Pagini</a></li>
+            <li class="page-content-articles">
+               <a class="page-content-articles" href="#func">Functionalitati</a>
+               <ol>
+                  <li class="page-content-articles"><a class="page-content-articles" href="#tech">Tehnologii folosite</a></li>
+                  <li class="page-content-articles"><a class="page-content-articles" href="#appfunc">Functionalitati ale aplicatiei</a></li>
+               </ol>
+            </li>
+            <li class="page-content-articles"><a class="page-content-articles" href="#contact">Contact</a></li>
+         </ol>
+      </div>
+      <h2 id="abstract" class="page-content">Abstract</h2>
+      <div class="bg-for-items">
+         <p class="page-content">
+            Perfumes Manager (PerMa) este o aplicatie web conceputa pentru a manageria o colectie de parfumuri, permitand utilizatorilor sa-si exprime opinia
+            vis-a-vis de produsele disponibile. 
+         </p>
+      </div>
+      <h2 id="introducere" class="page-content">Introducere</h2>
+      <div class="bg-for-items">
+         <p class="page-content">
+            PerMa (Smart Perfume Web Manager) este o aplicatie Web de management al resurselor dintr-o parfumerie care ofera utilizatorilor 
+            diverse (tipuri de) parfumuri, in functie de profilul unei persoane si vizand o anumita ocazie, un anotimp etc. 
+            Fiecare produs are atasate proprietati specifice, precum: ingrediente, pret, comentarii, tag-uri, relatii cu alte parfumuri inrudite. 
+         </p>
+      </div>
+      <h2 id="pagini" class="page-content">Pagini</h2>
+      <div class="bg-for-items">
+         <p class="page-content">
+            Paginile ce pot fi accesate in aplicatia Web PerMa sunt urmatoarele:
+         </p>
+         <ul>
+            <li class="page-content-articles">
+               <a class="page-content-articles" href="/">Home</a>
+               <p class="page-content-articles"> Aceasta constituie pagina de "Bun venit"</p>
+            </li>
+            <li class="page-content-articles">
+               <a class="page-content-articles" href="/products">Explore</a>
+               <p class="page-content-articles"> Aici vor fi afisate parfumurile disponibile pe stoc.
+                  Aceasta pagina este generata dinamic (datele referitoare la parfumuri sunt preluate din baza de date) pentru a oferi un mod mai facil de manipulare a produselor.
+               </p>
+            </li>
+            <li class="page-content-articles">
+               <a class="page-content-articles" href="/daily">Daily Choice</a>
+               <p class="page-content-articles"> Aceasta pagina contine produsul care se 
+                  situeaza in topul preferintelor clientilor. Pe baza comentariilor, review-urilor pozitie si a numarului de comenzi, in fiecare zi se va face cate o recoamndare.
+                  In prim plan se va afla parfumul cel mai popular insotit de o descriere detaliata.
+               </p>
+            </li>
+            <li class="page-content-articles">
+               <a class="page-content-articles" href="/user/forme">Suggestion</a>
+               <p class="page-content-articles">Pe baza datelor din profilul unui utilizator,
+                  se va face o recomandare personalizata in functie de: varsta, gen, anotimp, etc. Aceasta pagina se aseamana cu Daily Choice (avand un singur parfum
+                  in prim plan), diferenta fiind ca recomandarea se va face in functie de user.
+               </p>
+            </li>
+            <li class="page-content-articles">
+               <a class="page-content-articles" href="/about">About</a>
+               <p class="page-content-articles"> Pagina curenta: Contine informatii legate de aplicatia PerMa</p>
+            </li>
+            <li class="page-content-articles">
+               <a class="page-content-articles" href="/user/signup">Sign Up</a>
+               <p class="page-content-articles"> Pentru a putea primi sugestii si pentru a putea efectua comenzi/ plasa 
+                  review-uri, persoana in cauza trebuie sa se autentifice cu un cont existent sau sa se inregistreze pe platform Perma. Aceasta pagina consta intr-un formular
+                  ce preia date de baza precum numele complet, username, gen, parola si tara de provenienta. Ulterior aceste date sunt stocate in baza de date
+                  pentru ca user-ul sa se poata autentifica ulterior.
+               </p>
+            </li>
+            <li class="page-content-articles">
+               <a class="page-content-articles" href="/user/login">Log In</a>
+               <p class="page-content-articles"> Aceasta pagina ii
+                  permite unui utilizator deja existent sa se poate autentifica pe platforma PerMa.
+               </p>
+            </li>
+         </ul>
+      </div>
+      <h2 id="func" class="page-content">Functionalitati</h2>
+      <div class="bg-for-items">
+         <p id="tech" class="page-content">
+            Tehnologii folosite
+         </p>
+         <ul>
+            <li class="page-content-articles">Arhitectura Aplicatiei
+            <p class="page-content-articles"> Am folosit structura MVC deoarece
+               aceasta imi permite sa structurez aplicatia mult mai bine si sa o pot extine mai usor pe viitor. Aplicatia fiind impartita pe module,
+               mentenanta acesteia va fi semnificativ mai usoara.
+            </p></li>
+            <li class="page-content-articles">Baza de Date
+            <p class="page-content-articles">Am ales sa folosesc mongoDB pentru partea de manipulare a dateor deoarece query-urile sunt mult mai usor
+               de facut fata de Bazele de date relationare (SQL). Pe langa acest aspect, bazele de date NOSQL ofera mai multe avantaje, precum: scalabilitate,
+               boost de performanta prin denormalizare, etc.
+            </p></li>
+            <li class="page-content-articles">HTML5 & CSS3
+            <p class="page-content-articles">
+               Cele doua tehnologii au fost folosite in realizarea front end-ului.
+            </p></li>
+         </ul>
+         <p id="appfunc" class="page-content">
+            Functionalitati ale aplicatiei
+         <ul>
+            <li class="page-content-articles">Generare dinamica a paginilor
+            <p class="page-content-articles"> Daca luam ca exemplu pagina "Explore", aceasta este generata dinamic cu datele din BD (s-a facut un PUT request
+               unde au fost fetch-uite datele necesare). Acesta este un avantaj major deoarece, daca pagina ar fi fost statica, aceasta ar fi avut un timp mai
+               indelungat de incarcare (un query in baza de date este mai rapid in acest context).
+               Pentru generarea paginilor dinamice, nu s-a folosit niciun templating engine. Am optat pentru functionalitate createElement() in realizarea obiectelor 
+               HTML.
+            </p></li>
+            <li class="page-content-articles">Sistem de Log IN/ Sign UP
+            <p class="page-content-articles">
+               Ca orice aplicatie Web, PerMa beneficiaza de un sistem de Log IN / Sign UP ce permite utilizatorilor sa se autentifice pe platforma.
+               Aceste doua pagini constituie un formular ce preia datele din front-end si le trimite catre backend (fetch), unde sunt validate (se 
+               efectueaza un query in BD pentru a verifica daca datele sunt valide).
+            </p></li>
+            <li class="page-content-articles">Design Responsive
+            <p class="page-content-articles">
+               Aplicatia PerMa beneficiaza de un design responsive, fapt ce ii permite sa fie afisata corect pe orice tip de ecran (smartphone/ tableta/ computer).
+            </p></li>
+         </ul>
+      </div>
+      <h2 id="contact" class="page-content">Contact</h2>
+      <div class="bg-for-items">
+         <ul>
+            <li class="page-content-articles">Nume: Chimu Stefan-Catalin</li>
+            <li class="page-content-articles">Adresa e-mail: stefan.chimu@info.uaic.ro</li>
+            <li class="page-content-articles">Profesor coordonator: Ciprian Amariei</li>
+         </ul>
+      </div>
+      <div class="footer">
+         <p class="rand-text">PerMa Store</p>
+      </div>
+   </body>
+</html>
